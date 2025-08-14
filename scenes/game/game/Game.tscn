@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbvyeaprv8eii"]
+
+[ext_resource type="Script" uid="uid://cfs8ghjwsauls" path="res://scenes/game/game/Game.gd" id="1_ot2fv"]
+[ext_resource type="PackedScene" uid="uid://chraxtlb6y24k" path="res://level/Level.tscn" id="2_b1rhr"]
+[ext_resource type="PackedScene" uid="uid://b3qvsbhy4v5ka" path="res://scenes/ui/components/HeatBar/HeatBar.tscn" id="3_irah8"]
+[ext_resource type="PackedScene" uid="uid://bpwprw5jcs070" path="res://scenes/ui/components/TokenWall/TokenWall.tscn" id="3_jswod"]
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_ot2fv")
+ui_visible_time_scale = 0.1
+
+[node name="Level" parent="." instance=ExtResource("2_b1rhr")]
+unique_name_in_owner = true
+
+[node name="TokenWall" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_jswod")]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+level = NodePath("../Level")
+max_to_display = 12
+
+[node name="HeatBar" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_irah8")]
+unique_name_in_owner = true
+level = NodePath("../Level")

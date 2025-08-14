@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy7uwmtyj6cl2"]
+
+[ext_resource type="Script" uid="uid://rfov4tnt5wto" path="res://entity/components/network_node/scripts/EntityNetworkNodeComponent.gd" id="1_8bny3"]
+
+[node name="EntityNetworkNodeComponent" type="Node3D"]
+script = ExtResource("1_8bny3")

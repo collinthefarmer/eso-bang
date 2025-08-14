@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv6cdtb8c27o2"]
+
+[ext_resource type="Script" uid="uid://tx4fg1e23808" path="res://entity/components/caster/scripts/EntityCasterComponent.gd" id="1_sm4ql"]
+
+[node name="EntityCasterComponent" type="Node"]
+script = ExtResource("1_sm4ql")

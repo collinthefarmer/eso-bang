@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Token" load_steps=2 format=3 uid="uid://biq0g0ckpmgf6"]
+
+[ext_resource type="Script" uid="uid://pse804hof4ow" path="res://game/token/scripts/Token.gd" id="1_gae56"]
+
+[resource]
+script = ExtResource("1_gae56")
+cost = 1
+name = &"TOKEN__PLEX"
+word = "ppppppppplex"
+metadata/_custom_type_script = "uid://pse804hof4ow"

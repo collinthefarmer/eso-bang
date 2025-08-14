@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSpawn" load_steps=3 format=3 uid="uid://dus8db3du5svg"]
+
+[ext_resource type="Script" uid="uid://b828w44ynedge" path="res://entity/strategies/script/SingleSpawn.gd" id="1_jbgtg"]
+[ext_resource type="PackedScene" uid="uid://coxa0iqjvk4tk" path="res://entity/entities/Player/Player.tscn" id="1_jp7ou"]
+
+[resource]
+script = ExtResource("1_jbgtg")
+delay = 0.0
+spawn_height_offset = 25
+entity_scene = ExtResource("1_jp7ou")

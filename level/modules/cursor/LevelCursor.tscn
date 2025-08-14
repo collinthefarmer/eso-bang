@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckmg074eyyo4u"]
+
+[ext_resource type="Script" uid="uid://1ltr203dqv51" path="res://level/modules/cursor/scripts/LevelCursor.gd" id="1_0mq7n"]
+
+[node name="LevelCursor" type="Node3D"]
+script = ExtResource("1_0mq7n")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]

@@ -1,0 +1,2 @@
+extends CollisionShape3D
+class_name EntityHitboxComponent

@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://coxa0iqjvk4tk"]
+
+[ext_resource type="Script" uid="uid://ds0dj2ljwiyys" path="res://entity/entities/Player/scripts/Player.gd" id="1_flps1"]
+[ext_resource type="PackedScene" uid="uid://brnaghqqcbae0" path="res://entity/components/control/PlayerControl.tscn" id="2_2jkc0"]
+[ext_resource type="PackedScene" uid="uid://dv6cdtb8c27o2" path="res://entity/components/caster/EntityCasterComponent.tscn" id="2_xvr3x"]
+[ext_resource type="PackedScene" uid="uid://rj8bhicml6lm" path="res://entity/components/network_travel/EntityNetworkTravelComponent.tscn" id="4_li2sr"]
+[ext_resource type="PackedScene" uid="uid://hmy1nwabkdst" path="res://entity/components/camera_target/EntityCameraTargetComponent.tscn" id="5_pohry"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_li2sr"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_flps1")
+
+[node name="PlayerControl" parent="." instance=ExtResource("2_2jkc0")]
+unique_name_in_owner = true
+
+[node name="EntityCasterComponent" parent="." node_paths=PackedStringArray("entity_root") instance=ExtResource("2_xvr3x")]
+unique_name_in_owner = true
+entity_root = NodePath("..")
+
+[node name="EntityNetworkTravelComponent" parent="." node_paths=PackedStringArray("entity_root") instance=ExtResource("4_li2sr")]
+unique_name_in_owner = true
+entity_root = NodePath("..")
+
+[node name="EntityCameraTargetComponent" parent="." node_paths=PackedStringArray("entity_root") instance=ExtResource("5_pohry")]
+unique_name_in_owner = true
+entity_root = NodePath("..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_li2sr")

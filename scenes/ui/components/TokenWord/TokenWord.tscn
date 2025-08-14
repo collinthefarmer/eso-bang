@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgk8hnu6e7mr1"]
+
+[ext_resource type="Script" uid="uid://2i3op4b26o5n" path="res://scenes/ui/components/TokenWord/scripts/TokenWord.gd" id="1_gjn3o"]
+
+[node name="TokenWord" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_gjn3o")

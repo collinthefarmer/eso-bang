@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=3 uid="uid://chraxtlb6y24k"]
+
+[ext_resource type="Script" uid="uid://fyuh7s0fq1jf" path="res://level/scripts/Level.gd" id="1_pg7j0"]
+[ext_resource type="PackedScene" uid="uid://cmo1q247w1jpm" path="res://level/modules/geometry/LevelGeometry.tscn" id="2_q1pd7"]
+[ext_resource type="Script" uid="uid://dg74igmhulqa0" path="res://util/FastNoiseLiteLayer.gd" id="3_j0xgy"]
+[ext_resource type="Script" uid="uid://bsm7apfj62ga7" path="res://level/modules/geometry/scripts/LevelGeometryData.gd" id="4_2eqkt"]
+[ext_resource type="Script" uid="uid://dlgbm20t4ucpg" path="res://level/modules/geometry/scripts/LevelGeometryKernel.gd" id="5_bgbo5"]
+[ext_resource type="PackedScene" uid="uid://1u1ni6ealffj" path="res://level/modules/camera/LevelCamera.tscn" id="6_2fp8g"]
+[ext_resource type="PackedScene" uid="uid://cv4vrp2b3kkug" path="res://level/modules/network/LevelNetwork.tscn" id="7_yc8qn"]
+[ext_resource type="PackedScene" uid="uid://ckmg074eyyo4u" path="res://level/modules/cursor/LevelCursor.tscn" id="8_74osr"]
+[ext_resource type="Script" uid="uid://cqtc2l80m3jxa" path="res://level/modules/services/entity_service/EntityService.gd" id="9_wuodw"]
+[ext_resource type="Script" uid="uid://qfyw8y8eccsf" path="res://level/modules/services/heat_service/HeatService.gd" id="10_uqc5m"]
+[ext_resource type="Script" uid="uid://c0rsbkrmw2r0d" path="res://level/modules/services/token_service/TokenService.gd" id="11_5s7ic"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0evy8"]
+script = ExtResource("3_j0xgy")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_hemwf"]
+resource_local_to_scene = true
+script = ExtResource("4_2eqkt")
+dimensions = Vector2i(64, 64)
+noise_layers = Array[ExtResource("3_j0xgy")]([SubResource("FastNoiseLite_0evy8")])
+
+[sub_resource type="Resource" id="Resource_gasq8"]
+resource_local_to_scene = true
+script = ExtResource("5_bgbo5")
+data = SubResource("Resource_hemwf")
+height_scale = 0.0
+min_height = 0.0
+max_height = 0.0
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_pg7j0")
+
+[node name="LevelCursor" parent="." node_paths=PackedStringArray("level") instance=ExtResource("8_74osr")]
+unique_name_in_owner = true
+level = NodePath("..")
+
+[node name="LevelCamera" parent="." node_paths=PackedStringArray("level") instance=ExtResource("6_2fp8g")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 62.885, 0)
+projection = 1
+fov = 141.0
+size = 36.425
+level = NodePath("..")
+orbit_distance = 1.815
+
+[node name="LevelNetwork" parent="." node_paths=PackedStringArray("level") instance=ExtResource("7_yc8qn")]
+unique_name_in_owner = true
+max_connection_distance = 10.0
+min_connection_distance = 1.0
+max_connections = 2
+max_points = 2
+level = NodePath("..")
+
+[node name="LevelGeometry" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_q1pd7")]
+unique_name_in_owner = true
+kernel = SubResource("Resource_gasq8")
+level = NodePath("..")
+
+[node name="EntityService" type="Node" parent="." node_paths=PackedStringArray("level")]
+unique_name_in_owner = true
+script = ExtResource("9_wuodw")
+level = NodePath("..")
+
+[node name="HeatService" type="Node" parent="." node_paths=PackedStringArray("level", "entity_service")]
+unique_name_in_owner = true
+script = ExtResource("10_uqc5m")
+level = NodePath("..")
+entity_service = NodePath("../EntityService")
+
+[node name="TokenService" type="Node" parent="." node_paths=PackedStringArray("level")]
+unique_name_in_owner = true
+script = ExtResource("11_5s7ic")
+level = NodePath("..")

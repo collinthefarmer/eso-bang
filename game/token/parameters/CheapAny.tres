@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TokenParameters" load_steps=2 format=3 uid="uid://c78odaw0vj1wa"]
+
+[ext_resource type="Script" uid="uid://b4xi1hknv7y8o" path="res://game/token/scripts/TokenParameters.gd" id="1_mfn7s"]
+
+[resource]
+script = ExtResource("1_mfn7s")
+cost_range = Vector2(0, 1)
+is_type = -1
+metadata/_custom_type_script = "uid://b4xi1hknv7y8o"

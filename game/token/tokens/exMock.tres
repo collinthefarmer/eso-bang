@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Token" load_steps=2 format=3 uid="uid://bmuniff7egyaa"]
+
+[ext_resource type="Script" uid="uid://pse804hof4ow" path="res://game/token/scripts/Token.gd" id="1_ucxaq"]
+
+[resource]
+script = ExtResource("1_ucxaq")
+cost = 1
+name = &"TOKEN__EXMOCK"
+word = "exMock"
+metadata/_custom_type_script = "uid://pse804hof4ow"

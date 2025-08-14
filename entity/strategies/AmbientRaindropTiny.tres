@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bapb332kg2gou"]
+
+[ext_resource type="PackedScene" uid="uid://c5xhfwe8452gm" path="res://entity/entities/Raindrop/RaindropTiny.tscn" id="1_w8osh"]
+[ext_resource type="Script" uid="uid://cl4tvnwko8d7e" path="res://entity/strategies/script/Ambient.gd" id="2_it6si"]
+
+[resource]
+script = ExtResource("2_it6si")
+rate = 20.0
+spawn_height_offset = 25
+entity_scene = ExtResource("1_w8osh")

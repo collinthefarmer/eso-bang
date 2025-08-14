@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmo1q247w1jpm"]
+
+[ext_resource type="Script" path="res://scenes/abstract/level/geometry/LevelGeometry.gd" id="1_gpibu"]
+[ext_resource type="Script" path="res://resources/abstract/util/FastNoiseLiteLayer.gd" id="2_1741m"]
+[ext_resource type="Script" path="res://resources/abstract/level/LevelGeometryData.gd" id="2_mnbhx"]
+[ext_resource type="Script" path="res://resources/abstract/level/LevelGeometryKernel.gd" id="3_0b668"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0evy8"]
+script = ExtResource("2_1741m")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_3sg8r"]
+script = ExtResource("2_mnbhx")
+dimensions = Vector2i(64, 64)
+noise_layers = Array[ExtResource("2_1741m")]([SubResource("FastNoiseLite_0evy8")])
+
+[sub_resource type="Resource" id="Resource_uxj8p"]
+script = ExtResource("3_0b668")
+data = SubResource("Resource_3sg8r")
+height_scale = 64.0
+min_height = 0.0
+max_height = 4.0
+
+[node name="LevelGeometry" type="Node3D"]
+script = ExtResource("1_gpibu")
+kernel = SubResource("Resource_uxj8p")
+
+[node name="TerrainTriMesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+
+[node name="TerrainBody" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
+
+[node name="TerrainCollider" type="CollisionShape3D" parent="TerrainBody"]
+unique_name_in_owner = true

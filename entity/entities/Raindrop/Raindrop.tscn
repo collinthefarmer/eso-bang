@@ -1,0 +1,48 @@
+[gd_scene load_steps=11 format=3 uid="uid://peuvg6yyq0k4"]
+
+[ext_resource type="Script" uid="uid://dt0p2o74qq3p0" path="res://entity/entities/Raindrop/scripts/Raindrop.gd" id="1_6sotn"]
+[ext_resource type="PackedScene" uid="uid://dj3crx5cwlsy" path="res://entity/components/hitbox/EntityHitboxComponent.tscn" id="2_6aqb2"]
+[ext_resource type="PackedScene" uid="uid://bnybtd1egssf5" path="res://entity/components/token/EntityTokenComponent.tscn" id="2_fgp2w"]
+[ext_resource type="PackedScene" uid="uid://r3gymskmxctw" path="res://entity/components/lifecycle/EntityLifecycleComponent.tscn" id="3_fgp2w"]
+[ext_resource type="Resource" uid="uid://c78odaw0vj1wa" path="res://game/token/parameters/CheapAny.tres" id="3_wlw0q"]
+[ext_resource type="Shader" uid="uid://txvjce8qk2pd" path="res://entity/entities/Raindrop/Raindrop.gdshader" id="4_wlw0q"]
+[ext_resource type="PackedScene" uid="uid://fqks7e27ea2t" path="res://entity/components/heat/PassiveHeat.tscn" id="5_hgbyi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gkie5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ut6bg"]
+render_priority = 0
+shader = ExtResource("4_wlw0q")
+shader_parameter/color = Color(0.302105, 0.881294, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_5id1i"]
+material = SubResource("ShaderMaterial_ut6bg")
+radial_segments = 6
+rings = 3
+
+[node name="Raindrop" type="RigidBody3D"]
+input_ray_pickable = false
+script = ExtResource("1_6sotn")
+
+[node name="EntityTokenComponent" parent="." node_paths=PackedStringArray("entity_root") instance=ExtResource("2_fgp2w")]
+entity_root = NodePath("..")
+token_parameters = ExtResource("3_wlw0q")
+
+[node name="EntityHitboxComponent" parent="." instance=ExtResource("2_6aqb2")]
+shape = SubResource("SphereShape3D_gkie5")
+
+[node name="EntityLifecycleComponent" parent="." node_paths=PackedStringArray("entity_root") instance=ExtResource("3_fgp2w")]
+wait_time = 45.0
+entity_root = NodePath("..")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_5id1i")
+
+[node name="Light" type="OmniLight3D" parent="."]
+light_color = Color(0.302105, 0.881294, 0, 1)
+omni_range = 1.301
+omni_attenuation = 0.857
+
+[node name="PassiveHeat" parent="." node_paths=PackedStringArray("entity_root") instance=ExtResource("5_hgbyi")]
+entity_root = NodePath("..")
+initial_heat_energy = 10.0

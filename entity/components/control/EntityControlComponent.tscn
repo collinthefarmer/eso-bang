@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cou62pciu6h4d"]
+
+[ext_resource type="Script" uid="uid://drkt7uhfendws" path="res://entity/components/control/scripts/EntityControlComponent.gd" id="1_yar3c"]
+
+[node name="EntityControlComponent" type="Node3D"]
+script = ExtResource("1_yar3c")

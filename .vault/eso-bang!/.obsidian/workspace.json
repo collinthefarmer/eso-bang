@@ -1,0 +1,173 @@
+{
+  "main": {
+    "id": "0299fcef71484928",
+    "type": "split",
+    "children": [
+      {
+        "id": "bd203e9c26e2394f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "81e5046e50cef499",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Level.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3793c4e37a705128",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Entities.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c61cb1338424ec06",
+    "type": "split",
+    "children": [
+      {
+        "id": "e1eb00ebcf25ed3b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bb15ed9bea5f9c3d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "96a233af5b31d375",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cb51867bda36131b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "6a92ca6e96bf4d71",
+    "type": "split",
+    "children": [
+      {
+        "id": "7188bd676df7f2e0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b3213ee34f888771",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Entities.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "be253194db4c70c9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Entities.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "361805ef1dee1f67",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "cf9513dca8b1ca9c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Entities.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "3793c4e37a705128",
+  "lastOpenFiles": [
+    "Level.md",
+    "Entities.md",
+    "Concepts.md",
+    "Outline.md",
+    "CORRUPTION.md",
+    "About.md",
+    "Tasks.md",
+    "Welcome.md"
+  ]
+}

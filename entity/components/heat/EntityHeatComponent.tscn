@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgsjt6xl1rpst"]
+
+[ext_resource type="Script" uid="uid://dgckjkbqlvyvd" path="res://entity/components/heat/scripts/EntityHeatComponent.gd" id="1_5iu3e"]
+
+[node name="PassiveHeat" type="Node3D"]
+script = ExtResource("1_5iu3e")

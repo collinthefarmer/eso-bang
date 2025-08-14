@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmo1q247w1jpm"]
+
+[ext_resource type="Script" uid="uid://431tkhrh70at" path="res://level/modules/geometry/scripts/LevelGeometry.gd" id="1_gpibu"]
+[ext_resource type="Script" uid="uid://dg74igmhulqa0" path="res://util/FastNoiseLiteLayer.gd" id="2_1741m"]
+[ext_resource type="Script" uid="uid://bsm7apfj62ga7" path="res://level/modules/geometry/scripts/LevelGeometryData.gd" id="2_mnbhx"]
+[ext_resource type="Script" uid="uid://dlgbm20t4ucpg" path="res://level/modules/geometry/scripts/LevelGeometryKernel.gd" id="3_0b668"]
+[ext_resource type="Shader" uid="uid://dk1adg3w4ii51" path="res://level/modules/geometry/LevelGeometry.gdshader" id="5_7k1rv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0evy8"]
+script = ExtResource("2_1741m")
+weight = 1.0
+
+[sub_resource type="Resource" id="Resource_3sg8r"]
+resource_local_to_scene = true
+script = ExtResource("2_mnbhx")
+dimensions = Vector2i(64, 64)
+noise_layers = Array[ExtResource("2_1741m")]([SubResource("FastNoiseLite_0evy8")])
+
+[sub_resource type="Resource" id="Resource_uxj8p"]
+resource_local_to_scene = true
+script = ExtResource("3_0b668")
+data = SubResource("Resource_3sg8r")
+height_scale = 0.0
+min_height = 0.0
+max_height = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_27n5r"]
+render_priority = 0
+shader = ExtResource("5_7k1rv")
+shader_parameter/ff = 1.51
+shader_parameter/fdf = 3.13
+shader_parameter/a = 0.615
+shader_parameter/b = 0.485
+shader_parameter/color = Color(0.210635, 0.627262, 3.85046e-07, 1)
+
+[node name="LevelGeometry" type="Node3D"]
+script = ExtResource("1_gpibu")
+kernel = SubResource("Resource_uxj8p")
+
+[node name="TerrainTriMesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+material_override = SubResource("ShaderMaterial_27n5r")
+
+[node name="TerrainBody" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
+
+[node name="TerrainCollider" type="CollisionShape3D" parent="TerrainBody"]
+unique_name_in_owner = true
+
+[node name="TerrainBounds" type="Area3D" parent="."]
+unique_name_in_owner = true
+input_ray_pickable = false
+
+[node name="BoundsCollider" type="CollisionShape3D" parent="TerrainBounds"]
+unique_name_in_owner = true

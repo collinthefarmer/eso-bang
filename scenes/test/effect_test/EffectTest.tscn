@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqw4t4lq0vy57"]
+
+[ext_resource type="Script" uid="uid://dckagm52omqgg" path="res://scenes/test/effect_test/EffectTest.gd" id="1_m8na8"]
+[ext_resource type="PackedScene" uid="uid://dk5c7da8swqge" path="res://effect/effects/BlackHole/BlackHole.tscn" id="2_abcji"]
+
+[sub_resource type="Resource" id="Resource_e6uhr"]
+metadata/__load_path__ = "res://scenes/entity/TestSphere/TestSphere.tscn"
+
+[node name="EffectTest" type="Node3D"]
+script = ExtResource("1_m8na8")
+effect = ExtResource("2_abcji")
+entity = SubResource("Resource_e6uhr")
+spawn_offset = Vector3(0, 20, 0)

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dk5c7da8swqge"]
+
+[ext_resource type="PackedScene" uid="uid://dnxbtdm5wnuvb" path="res://effect/Effect.tscn" id="1_0gn4b"]
+[ext_resource type="Script" uid="uid://c5ylft3ajxbuh" path="res://effect/effects/BlackHole/BlackHole.gd" id="2_c2rwa"]
+[ext_resource type="Script" uid="uid://brpjbn5wkj5e6" path="res://effect/EffectKernel.gd" id="3_qlhyl"]
+
+[sub_resource type="Resource" id="Resource_clp6n"]
+script = ExtResource("3_qlhyl")
+strength = 12.67
+size = 9.185
+duration_secs = 0.0
+direction = Vector3(0, 0, 0)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h46os"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n3ptd"]
+radius = 1.0
+
+[node name="Effect" instance=ExtResource("1_0gn4b")]
+script = ExtResource("2_c2rwa")
+kernel = SubResource("Resource_clp6n")
+
+[node name="Area" type="Area3D" parent="." index="0"]
+unique_name_in_owner = true
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector3(0, 0, 0)
+gravity_direction = Vector3(0, 0, 0)
+
+[node name="Well" type="CollisionShape3D" parent="Area" index="0"]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_h46os")
+
+[node name="Singularity" type="CollisionShape3D" parent="Area" index="1"]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_n3ptd")
+
+[connection signal="body_shape_entered" from="Area" to="." method="_on_body_shape_entered"]

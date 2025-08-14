@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv4vrp2b3kkug"]
+
+[ext_resource type="Script" uid="uid://dsjpwi0rfl3jv" path="res://level/modules/network/scripts/LevelNetwork.gd" id="1_l4rtj"]
+
+[node name="LevelNetwork" type="Node3D"]
+script = ExtResource("1_l4rtj")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Token" load_steps=2 format=3 uid="uid://cuofc5hxmpi8f"]
+
+[ext_resource type="Script" uid="uid://pse804hof4ow" path="res://game/token/scripts/Token.gd" id="1_8rliv"]
+
+[resource]
+script = ExtResource("1_8rliv")
+cost = 1
+name = &"TOKEN__alB4"
+word = "alB4"
+metadata/_custom_type_script = "uid://pse804hof4ow"
