@@ -122,8 +122,8 @@ func _on_entity_attachment_requested(
 
 func _on_node_entered(node: Node3D, component: EntityNetworkNodeComponent):
     component.network = self
-    component.node_id = self.nodes.find(node)
-    component.connections = self.astar.get_point_connections(component.node_id)
+    component.point_id = self.nodes.find(node)
+    component.connections = self.astar.get_point_connections(component.point_id)
     print(component)
 
 func _select_connectable(to_id: int):

@@ -2,10 +2,10 @@ extends Node
 class_name EntityNetworkNodeComponent
 
 @export
-var network: LevelNetwork
+var network: Network
 
 @export
-var node_id: int
+var point_id: int
 
 @export
 var connections: PackedInt64Array
